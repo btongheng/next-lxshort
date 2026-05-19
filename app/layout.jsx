@@ -12,6 +12,7 @@ export const metadata = {
 }
 
 export const viewport = {
+  themeColor: 'bg-background',
   userScalable: false,
 }
 
