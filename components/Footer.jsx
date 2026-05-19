@@ -19,7 +19,7 @@ export default function Footer() {
                     <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
                         <Link href="/">
                             <Image
-                                src="/Lxshort.svg"
+                                src="/LXshort.svg"
                                 alt="LXShort Logo"
                                 width={150}
                                 height={40}

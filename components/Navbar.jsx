@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4 text-xl font-bold text-white">
           <Link href="/">
             <Image
-             src="/Lxshort.svg"
+             src="/LXshort.svg"
               alt="LXShort Logo"
               width={120}
               height={40}
