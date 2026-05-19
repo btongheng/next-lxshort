@@ -1,0 +1,67 @@
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+
+export default function Footer() {
+    return (
+        <footer className="relative bg-black text-gray-200 mt-12">
+            <div
+                className="absolute inset-0 bg-cover bg-center opacity-30"
+                style={{ backgroundImage: "url('/footer.jpg')" }}
+                aria-hidden="true"
+            />
+
+            <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+
+            <div className="relative max-w-6xl mx-auto px-4 py-12">
+                <div className="flex flex-col items-center justify-center gap-8 ">
+                    <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
+                        <Link href="/">
+                            <Image
+                                src="/Lxshort.svg"
+                                alt="LXShort Logo"
+                                width={150}
+                                height={40}
+                            />
+                        </Link>
+                        <nav className="flex flex-row gap-4 text-sm text-gray-300">
+                            <Link href="/movies">Movies</Link>
+                            <Link href="/tv-shows">TV-Shows</Link>
+                            <Link href="/favorites">Favorites</Link>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <div className="mt-6 text-center max-w-3xl mx-auto">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                        Free Movies Center is top of free streaming website, where to watch movies online free without
+                        registration required. With a big database and great features, we're confident. V3.freemovies.autos is
+                        the best free movies online website in the space that you can't simply miss!
+                    </p>
+                    {/* 
+					<p className="mt-4 text-sm text-primary">
+						This site does not store any files on our server, we only linked to the media which is hosted on 3rd
+						party services.
+					</p> */}
+
+                    <p className="mt-6 text-xs text-gray-400">LXShort © {new Date().getFullYear()}. All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    );
+}
+
+function FooterLink({ href, children }) {
+    return (
+        <Link href={href} className="flex items-center gap-3 text-gray-200 hover:text-white">
+            <span className="inline-flex items-center justify-center w-6 h-6 bg-(--primary) rounded text-white text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-3 h-3">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 18l6-6-6-6" />
+                </svg>
+            </span>
+            <span className="text-sm">{children}</span>
+        </Link>
+    );
+}
