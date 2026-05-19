@@ -1,11 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
-
 import VideoPlayer from "@/components/VideoPlayer";
 import ChannelCard from "@/components/ChannelCard";
-import { useSearch } from "./SearchProvider";
 
 export default function HomeClient({ initialChannels }) {
   const [selectedChannel, setSelectedChannel] = useState(initialChannels[0]);
@@ -15,7 +12,7 @@ export default function HomeClient({ initialChannels }) {
   }, [initialChannels]);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-(--background) text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-3">
         <section className="space-y-4 lg:col-span-2">
           <VideoPlayer stream={selectedChannel?.stream} />

@@ -9,7 +9,7 @@ export default function ChannelCard({ channel, onSelect }) {
   return (
     <button
       onClick={() => onSelect(channel)}
-      className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 text-left transition hover:bg-zinc-800"
+      className="overflow-hidden rounded-2xl border border-(--border-color) bg-zinc-900 text-left transition hover:bg-zinc-800"
     >
       <div className="relative h-40 w-full overflow-hidden">
         <Image

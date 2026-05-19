@@ -21,8 +21,8 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
   return (
     <div className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
       <div className="mx-auto max-w-2xl p-4 pt-24">
-        <div className="rounded-2xl border border-zinc-700 bg-zinc-950 shadow-2xl">
-          <div className="flex items-center justify-between border-b border-zinc-800 p-4">
+        <div className="rounded-2xl border border-(--border-color) bg-zinc-950 shadow-2xl">
+          <div className="flex items-center justify-between border-b border-(--border-color) p-4">
             <h2 className="text-lg font-semibold text-white">លទ្ធផល​ស្វែងរក</h2>
             <button
               onClick={onClose}
@@ -48,7 +48,7 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
                         onSelectChannel(channel);
                         onClose();
                       }}
-                      className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 text-left transition hover:bg-zinc-800"
+                      className="overflow-hidden rounded-lg border border-(--border-color) bg-zinc-900 text-left transition hover:bg-zinc-800"
                     >
                       <div className="relative h-24 w-full overflow-hidden">
                         <Image
