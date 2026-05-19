@@ -21,9 +21,9 @@ export default function SeriesPage() {
   }, [category]);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-background text-white">
       <div className="mx-auto max-w-7xl p-4 md:p-6">
-        <h1 className="mb-8 text-3xl font-bold">Series</h1>
+        {/* <h1 className="mb-8 text-3xl font-bold">Series</h1> */}
 
         <div className="mb-8 space-y-4 rounded-2xl border border-zinc-800 bg-zinc-950 p-4">
           <div className="flex flex-wrap gap-2">
@@ -48,7 +48,6 @@ export default function SeriesPage() {
               key={channel.id}
               channel={channel}
             />
-            
           ))}
         </div>
       </div>

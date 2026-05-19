@@ -31,8 +31,8 @@ export default function MobileMenu() {
               href={link.href}
               className={`flex flex-col items-center justify-center flex-1 py-3 px-2 transition ${
                 active
-                  ? "text-white border-t-2 border-white"
-                  : "text-zinc-400 hover:text-white"
+                  ? "text-primary border-t-2 border-primary"
+                  : "text-zinc-400 hover:text-primary border-t-2 border-transparent hover:border-primary"
               }`}
             >
               <Icon className="h-6 w-6 mb-1" />

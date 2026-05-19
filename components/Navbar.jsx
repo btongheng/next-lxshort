@@ -40,7 +40,7 @@ export default function Navbar() {
                   setIsModalOpen(true);
                 }}
                 onFocus={() => setIsModalOpen(true)}
-                className="w-full rounded-xl border border-zinc-700 bg-zinc-900 py-2 pl-10 pr-4 text-sm outline-none"
+                className="w-full rounded-xl border hover:border-zinc-700 border-zinc-900 bg-zinc-900 py-2 pl-10 pr-4 text-sm outline-none"
               />
             </div>
           </div>

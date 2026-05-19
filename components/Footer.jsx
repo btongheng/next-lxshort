@@ -5,16 +5,16 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="relative bg-black text-gray-200 mt-12">
+        <footer className="relative bg-black text-gray-200 mt-12 mb-8 md:mb-0">
             <div
-                className="absolute inset-0 bg-cover bg-center opacity-30"
+                className="absolute inset-0 bg-cover bg-center opacity-40"
                 style={{ backgroundImage: "url('/footer.jpg')" }}
                 aria-hidden="true"
             />
 
             <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
 
-            <div className="relative max-w-6xl mx-auto px-4 py-12">
+            <div className="relative max-w-6xl mx-auto px-6 py-12">
                 <div className="flex flex-col items-center justify-center gap-8 ">
                     <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
                         <Link href="/">
@@ -46,7 +46,7 @@ export default function Footer() {
 						party services.
 					</p> */}
 
-                    <p className="mt-6 text-xs text-gray-400">LXShort © {new Date().getFullYear()}. All Rights Reserved</p>
+                    <p className="my-6 text-xs text-gray-400">LXShort © {new Date().getFullYear()}. All Rights Reserved</p>
                 </div>
             </div>
         </footer>
