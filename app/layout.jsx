@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <SearchProvider>
           <Navbar />
           <SearchModalWrapper />
-          <main className="flex-1 grow pb-20 md:pb-0">{children}</main>
+          <main className="pb-20 md:pb-0">{children}</main>
           <MobileMenu />
         </SearchProvider>
         <Footer />

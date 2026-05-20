@@ -2,7 +2,7 @@ import Image from "next/image";
 import movieSeries from "@/data/movieSeries";
 import VideoPlayer from "@/components/VideoPlayer";
 import Link from "next/link";
-
+import ScrollToTop from "@/components/ScrollToTop";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const series = movieSeries.find((s) => s.id === parseInt(id));
@@ -32,6 +32,7 @@ export default async function SeriesDetail({ params }) {
 
   return (
     <div className="min-h-dvh bg-(--background) text-white">
+          <ScrollToTop />
       <div className="mx-auto max-w-7xl p-4 md:p-6">
         <Link 
           href="/"
