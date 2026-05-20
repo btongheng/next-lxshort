@@ -16,8 +16,8 @@ export default function Footer() {
 
             <div className="relative max-w-6xl mx-auto px-6 py-12">
                 <div className="flex flex-col items-center justify-center gap-8 ">
-                    <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
-                        <Link href="/">
+                    <div className=" flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
+                        <Link href="/" className="grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition duration-100">
                             <Image
                                 src="/LXshort.svg"
                                 alt="LXShort Logo"
