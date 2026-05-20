@@ -63,7 +63,7 @@ export default async function SeriesDetail({ params }) {
           </div>
 
           <div className="space-y-4">
-            <div className="relative aspect-9/13 w-full overflow-hidden rounded-lg bg-zinc-900">
+            <div className="relative aspect-9/12 h-56 overflow-hidden rounded-lg bg-zinc-900">
               <Image
                 src={series?.thumbnail?.trim() ? series.thumbnail : "https://via.placeholder.com/800x450?text=No+Image"}
                 alt={series.name}
