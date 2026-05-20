@@ -34,7 +34,8 @@ export default async function SeriesDetail({ params }) {
     <div className="min-h-dvh bg-(--background) text-white">
       <div className="mx-auto max-w-7xl p-4 md:p-6">
         <Link 
-          href="/" 
+          href="/"
+          scroll={true}
           className="inline-flex items-center gap-2 text-zinc-400 hover:text-white mb-4 transition"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
