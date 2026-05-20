@@ -43,7 +43,7 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
       onClick={handleBackdropClick}
       onTouchEnd={handleTouchEnd}
@@ -95,38 +95,38 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
                           </h3>
                         </div> */}
                         <div className="relative aspect-9/13 w-full overflow-hidden object-fill rounded-lg bg-zinc-900">
-                                <Image
-                                  loading="lazy"
-                                  src={thumbnail}
-                                  alt={channel?.name || "Channel"}
-                                  fill
-                                  unoptimized
-                                  className="object-cover transition duration-300"
-                                />
-                        
-                                {/* HD Badge */}
-                                <div className="absolute left-2 top-2 rounded bg-(--primary) px-1.5 py-0.5 text-xs font-bold text-white">
-                                  HD
-                                </div>
-                        
-                                {/* Overlay on Hover */}
-                                <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                              </div>
-                        
-                              {/* Info Section */}
-                              <div className="mt-1 space-y-1">
-                                {/* <div className="flex items-center gap-2 text-xs text-zinc-400">
+                          <Image
+                            loading="lazy"
+                            src={thumbnail}
+                            alt={channel?.name || "Channel"}
+                            fill
+                            unoptimized
+                            className="object-cover transition duration-300"
+                          />
+
+                          {/* HD Badge */}
+                          <div className="absolute left-2 top-2 rounded bg-(--primary) px-1 py-0.3 text-[10px] font-bold text-white">
+                            HD
+                          </div>
+
+                          {/* Overlay on Hover */}
+                          <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                        </div>
+
+                        {/* Info Section */}
+                        <div className="mt-1 space-y-1">
+                          {/* <div className="flex items-center gap-2 text-xs text-zinc-400">
                                   <span>{year}</span>
                                   <span>•</span>
                                   <span>{type}</span>
                                   <span>•</span>
                                   <span>{duration}</span>
                                 </div> */}
-                        
-                                <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
-                                  {channel?.name || "Unknown Channel"}
-                                </h2>
-                              </div>
+
+                          <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
+                            {channel?.name || "Unknown Channel"}
+                          </h2>
+                        </div>
                       </button>
                     );
                   })}
