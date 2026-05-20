@@ -1,6 +1,6 @@
-import channels from "@/data/channels";
+import movieSeries from "@/data/movieSeries";
 import HomeClient from "@/components/HomeClient";
 
 export default function Home() {
-  return <HomeClient initialChannels={channels} />;
+  return <HomeClient initialSeries={movieSeries} />;
 }

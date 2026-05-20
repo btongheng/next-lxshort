@@ -1,4 +1,4 @@
-const channels = [
+const movieSeries = [
   {
     id: 1,
     name: "ទ្រុងស្នេហ៍ឃុំចិត្ត",
@@ -82,4 +82,4 @@ const channels = [
   },
 ];
 
-export default channels;
+export default movieSeries;

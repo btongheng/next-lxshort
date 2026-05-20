@@ -1,18 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ChannelCard({ channel, onSelect }) {
+export default function SeriesCard({ movieSeries, onSelect }) {
   const thumbnail =
-    channel?.thumbnail?.trim()
-      ? channel.thumbnail
+    movieSeries?.thumbnail?.trim()
+      ? movieSeries.thumbnail
       : "https://via.placeholder.com/800x450?text=No+Image";
 
-  const year = channel?.year || new Date().getFullYear();
-  const type = channel?.type || "Movie";
-  const duration = channel?.duration || "120 min";
+  const handleClick = (e) => {
+    if (onSelect) {
+      e.preventDefault();
+      onSelect(movieSeries);
+    }
+  };
 
   return (
-    <button
-      onClick={() => onSelect(channel)}
+    <Link
+      href={`/series/${movieSeries?.id}`}
+      onClick={handleClick}
       className="cursor-pointer group relative w-full max-w-52.5 mb-2 overflow-hidden transition duration-300 hover:scale-101"
     >
       {/* Image Container */}
@@ -20,7 +25,7 @@ export default function ChannelCard({ channel, onSelect }) {
         <Image
           loading="lazy"
           src={thumbnail}
-          alt={channel?.name || "Channel"}
+          alt={movieSeries?.name || "Series Thumbnail"}
           fill
           unoptimized
           className="object-cover transition duration-300"
@@ -37,18 +42,10 @@ export default function ChannelCard({ channel, onSelect }) {
 
       {/* Info Section */}
       <div className="mt-2 space-y-1">
-        {/* <div className="flex items-center gap-2 text-xs text-zinc-400">
-          <span>{year}</span>
-          <span>•</span>
-          <span>{type}</span>
-          <span>•</span>
-          <span>{duration}</span>
-        </div> */}
-
         <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
-          {channel?.name || "Unknown Channel"}
+          {movieSeries?.name || "Unknown Series"}
         </h2>
       </div>
-    </button>
+    </Link>
   );
 }

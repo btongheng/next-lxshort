@@ -22,7 +22,7 @@ export default function Navbar() {
 
           <nav className="hidden md:flex items-center gap-4 md:gap-6 text-sm text-zinc-300">
             <NavLink href="/">ទំព័រដើម</NavLink>
-            <NavLink href="/series">ភាពយន្ត</NavLink>
+            <NavLink href="/browse">ភាពយន្ត</NavLink>
             <NavLink href="/movies">Movies</NavLink>
             <NavLink href="/about">About</NavLink>
           </nav>

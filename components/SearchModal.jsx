@@ -3,10 +3,10 @@
 import { useMemo, useEffect } from "react";
 import { X } from "lucide-react";
 import { useSearch } from "./SearchProvider";
-import channels from "@/data/channels";
+import movieSeries from "@/data/movieSeries";
 import Image from "next/image";
 
-export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
+export default function SearchModal({ isOpen, onClose, onSelectSeries }) {
   const { modalSearch } = useSearch();
 
   useEffect(() => {
@@ -20,10 +20,10 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
     };
   }, [isOpen]);
 
-  const filteredChannels = useMemo(() => {
+  const filteredSeries = useMemo(() => {
     if (!modalSearch.trim()) return [];
-    return channels.filter((channel) =>
-      channel?.name?.toLowerCase().includes(modalSearch.toLowerCase())
+    return movieSeries.filter((series) =>
+      series?.name?.toLowerCase().includes(modalSearch.toLowerCase())
     );
   }, [modalSearch]);
 
@@ -61,20 +61,20 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
           </div>
 
           <div className="max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-900">
-            {filteredChannels.length > 0 ? (
+            {filteredSeries.length > 0 ? (
               <>
                 <div className="grid grid-cols-3 gap-4 p-4 sm:grid-cols-4">
-                  {filteredChannels.map((channel) => {
+                  {filteredSeries.map((series) => {
                     const thumbnail =
-                      channel?.thumbnail?.trim()
-                        ? channel.thumbnail
+                      series?.thumbnail?.trim()
+                        ? series.thumbnail
                         : "https://via.placeholder.com/800x450?text=No+Image";
 
                     return (
                       <button
-                        key={channel.id}
+                        key={series.id}
                         onClick={() => {
-                          onSelectChannel(channel);
+                          onSelectSeries(series);
                           onClose();
                         }}
                         className="group overflow-hidden rounded text-left"
@@ -83,7 +83,7 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
                           <Image
                             loading="eager"
                             src={thumbnail}
-                            alt={channel?.name || "Channel"}
+                            alt={series?.name || "Series"}
                             fill
                             unoptimized
                             className="object-cover group-hover:scale-101 transition duration-300"
@@ -91,14 +91,14 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
                         </div>
                         <div className="p-2 bg-linear-to-t from-black/80 to-transparent">
                           <h3 className="line-clamp-2 text-sm font-semibold text-white">
-                            {channel?.name || "Unknown Channel"}
+                            {series?.name || "Unknown Series"}
                           </h3>
                         </div> */}
                         <div className="relative aspect-9/13 w-full overflow-hidden object-fill rounded-lg bg-zinc-900">
                           <Image
                             loading="lazy"
                             src={thumbnail}
-                            alt={channel?.name || "Channel"}
+                            alt={series?.name || "Series"}
                             fill
                             unoptimized
                             className="object-cover transition duration-300"
@@ -124,7 +124,7 @@ export default function SearchModal({ isOpen, onClose, onSelectChannel }) {
                                 </div> */}
 
                           <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
-                            {channel?.name || "Unknown Channel"}
+                            {series?.name || "Unknown Series"}
                           </h2>
                         </div>
                       </button>

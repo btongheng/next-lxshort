@@ -9,7 +9,7 @@ export default function MobileMenu() {
 
   const links = [
     { href: "/", label: "ទំព័រដើម", icon: Home },
-    { href: "/series", label: "ភាពយន្ត", icon: Film },
+    { href: "/browse", label: "ភាពយន្ត", icon: Film },
     { href: "/movies", label: "Movies", icon: Clapperboard },
     { href: "/about", label: "About", icon: Info },
   ];

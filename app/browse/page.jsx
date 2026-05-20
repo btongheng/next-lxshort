@@ -1,29 +1,29 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import channels from "@/data/channels";
-import ChannelCard from "@/components/ChannelCard";
+import MovieSeries from "@/data/movieSeries";
+import SeriesCard from "@/components/SeriesCard";
 
 const CARDS_PER_PAGE = 6;
 
-export default function SeriesPage() {
+export default function BrowsePage() {
   const [category, setCategory] = useState("រឿងគ្រប់ប្រភេទ");
   const [displayCount, setDisplayCount] = useState(CARDS_PER_PAGE);
 
   const categories = useMemo(() => {
-    return ["រឿងគ្រប់ប្រភេទ", ...new Set(channels.map((c) => c.category))];
+    return ["រឿងគ្រប់ប្រភេទ", ...new Set(MovieSeries.map((c) => c.category))];
   }, []);
 
-  const filteredChannels = useMemo(() => {
-    return channels.filter((channel) => {
+  const filteredSeries = useMemo(() => {
+    return MovieSeries.filter((series) => {
       const matchesCategory =
-        category === "រឿងគ្រប់ប្រភេទ" || channel?.category === category;
+        category === "រឿងគ្រប់ប្រភេទ" || series?.category === category;
       return matchesCategory;
     });
   }, [category]);
 
-  const visibleChannels = filteredChannels.slice(0, displayCount);
-  const hasMore = displayCount < filteredChannels.length;
+  const visibleSeries = filteredSeries.slice(0, displayCount);
+  const hasMore = displayCount < filteredSeries.length;
 
   const handleShowMore = () => {
     setDisplayCount(prev => prev + CARDS_PER_PAGE);
@@ -58,10 +58,11 @@ export default function SeriesPage() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-          {visibleChannels.map((channel) => (
-            <ChannelCard
-              key={channel.id}
-              channel={channel}
+          {visibleSeries.map((series) => (
+            <SeriesCard
+              key={series.id}
+              movieSeries={series}
+              
             />
           ))}
         </div>
@@ -75,7 +76,7 @@ export default function SeriesPage() {
               បង្ហាញបន្ថែម
             </button>
           ) : (
-            visibleChannels.length > 0 && (
+            visibleSeries.length > 0 && (
               <div className="px-6 py-2 pointer-events-none select-none text-center text-zinc-700 rounded-lg font-regular">
                 គ្មានទិន្នន័យបន្ថែម
               </div>
