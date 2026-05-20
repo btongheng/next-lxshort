@@ -1,14 +1,15 @@
-import React from 'react'
-
-export default function page() {
+export default function AboutPage() {
   return (
-    <div className="min-h-dvh bg-(--background) text-white">
-      <div className="mx-auto max-w-7xl p-4 md:p-6">
-        <h1 className="text-3xl font-bold mb-4">About Us</h1>
-        <p className="text-zinc-300 mb-6">
-          1.04
-        </p>
-      </div>
+    <div className="min-h-dvh flex flex-col bg-black text-white pb-24">
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-10">
+          <h1 className="text-4xl font-bold text-center">
+            About Us
+          </h1>
+
+          <p className="mt-4 text-center">1.06</p>
+        </div>
+      </main>
     </div>
-  )
+  );
 }
