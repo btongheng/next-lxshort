@@ -23,7 +23,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${googleSans.variable}`}>
-      <body className="flex flex-col min-h-screen bg-(--primary)">
+      <body className="flex flex-col min-h-dvh bg-(--primary)">
         <SearchProvider>
           <Navbar />
           <SearchModalWrapper />
