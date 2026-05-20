@@ -13,7 +13,7 @@ export default function ChannelCard({ channel, onSelect }) {
   return (
     <button
       onClick={() => onSelect(channel)}
-      className="group relative w-full max-w-52.5 mb-2 overflow-hidden rounded-lg transition duration-300 hover:scale-101"
+      className="cursor-pointer group relative w-full max-w-52.5 mb-2 overflow-hidden transition duration-300 hover:scale-101"
     >
       {/* Image Container */}
       <div className="relative aspect-9/13 w-full overflow-hidden object-fill rounded-lg bg-zinc-900">

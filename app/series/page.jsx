@@ -40,15 +40,15 @@ export default function SeriesPage() {
         <h1 className="mb-4 text-3xl font-bold">ប្រភេទរឿង</h1>
 
           {/* <h2>ប្រភេទរឿង</h2> */}
-        <div className="mb-8 space-y-4 rounded-2xl border border-zinc-800 bg-zinc-950 p-2">
+        <div className="mb-4 space-y-4 rounded-2xl border border-zinc-800 bg-zinc-950 p-2">
           <div className="flex flex-wrap gap-2">
             {categories.map((item) => (
               <button
                 key={item}
                 onClick={() => handleCategoryChange(item)}
-                className={`rounded-xl px-2 py-2 text-sm font-semibold ${category === item
+                className={`cursor-pointer rounded-xl px-2 py-2 text-sm font-semibold ${category === item
                     ? "bg-(--primary) text-white"
-                    : "bg-zinc-900 text-zinc-300"
+                    : "bg-zinc-900 text-zinc-300 hover:text-white"
                   }`}
               >
                 {item}
