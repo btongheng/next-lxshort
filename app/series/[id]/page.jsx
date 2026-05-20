@@ -19,7 +19,7 @@ export default async function SeriesDetail({ params }) {
 
   if (!series) {
     return (
-      <div className="min-h-screen bg-(--background) text-white flex items-center justify-center">
+      <div className="min-h-dvh bg-(--background) text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Series not found</h1>
           <Link href="/" className="text-(--primary) hover:underline">
@@ -31,7 +31,7 @@ export default async function SeriesDetail({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-(--background) text-white">
+    <div className="min-h-dvh bg-(--background) text-white">
       <div className="mx-auto max-w-7xl p-4 md:p-6">
         <Link 
           href="/" 
