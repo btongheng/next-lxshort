@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import VideoPlayer from "@/components/VideoPlayer";
 import SeriesCard from "@/components/SeriesCard";
+import ScrollToTop from "./ScrollToTop";
 
 const CARDS_PER_PAGE = 6;
 
@@ -31,6 +32,7 @@ export default function HomeClient({ initialSeries }) {
 
   return (
     <main className="min-h-screen bg-(--background) text-white">
+      <ScrollToTop />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 p-4 md:p-6 lg:grid-cols-3">
         <section className="space-y-4 lg:col-span-2">
           <VideoPlayer stream={selectedSeries?.stream} />
