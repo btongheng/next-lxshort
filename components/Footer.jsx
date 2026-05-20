@@ -36,9 +36,7 @@ export default function Footer() {
 
                 <div className="mt-6 text-center max-w-3xl mx-auto">
                     <p className="text-sm text-gray-600 leading-relaxed">
-                        Free Movies Center is top of free streaming website, where to watch movies online free without
-                        registration required. With a big database and great features, we're confident. V3.freemovies.autos is
-                        the best free movies online website in the space that you can't simply miss!
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rem, ipsam natus, ullam facere labore quos quod molestiae ea quaerat nesciunt? Quisquam voluptatibus sapiente quia delectus repellendus placeat? Eaque, officia.
                     </p>
                     {/* 
 					<p className="mt-4 text-sm text-primary">
