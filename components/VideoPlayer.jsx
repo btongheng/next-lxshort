@@ -32,7 +32,7 @@ export default function VideoPlayer({ stream }) {
     <video
       ref={videoRef}
       controls
-      autoPlay
+      autoPlay={false}
       playsInline
       className="aspect-video w-full rounded-2xl bg-black"
     />
