@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import MovieSeries from "@/data/movieSeries";
 import SeriesCard from "@/components/SeriesCard";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const CARDS_PER_PAGE = 6;
 
@@ -36,6 +37,7 @@ export default function BrowsePage() {
 
   return (
     <main className="min-h-screen bg-background text-white">
+      <ScrollToTop />
       <div className="mx-auto max-w-7xl p-4 md:p-6">
         <h1 className="mb-4 text-3xl font-bold">ប្រភេទរឿង</h1>
 
