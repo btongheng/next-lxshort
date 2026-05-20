@@ -9,15 +9,15 @@ import { SearchProvider } from '@/components/SearchProvider';
 export const metadata = {
   title: "LXShort - ទស្សនារឿងថ្មីៗ",
   description: "ទស្សនារឿងថ្មី ល្បីៗ ជាមួយ LXShort",
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ff33ff' },  // Your Dark Mode background hex
-    { media: '(prefers-color-scheme: dark)', color: '#ff33ff' },  // Your Dark Mode background hex
-  ],
-
+  
 }
 
 export const viewport = {
   userScalable: false,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ff33ff' },  // Your Dark Mode background hex
+    { media: '(prefers-color-scheme: dark)', color: '#ff33ff' },  // Your Dark Mode background hex
+  ],
 }
 
 export default function RootLayout({ children }) {
