@@ -22,7 +22,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${googleSans.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${googleSans.variable}`} suppressHydrationWarning>
       <body className="flex flex-col min-h-dvh bg-(--primary)">
         <SearchProvider>
           <Navbar />
