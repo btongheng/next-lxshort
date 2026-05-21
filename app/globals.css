@@ -17,21 +17,12 @@
     --font-secondary: var(--font-google-sans);
   }
 
-header {
-  /* padding-top: env(safe-area-inset-top, 0px); */
-}
 
 body {
-  /* margin: 0; */
   background: var(--background);
   color: var(--foreground);
-  /* overflow-x: hidden; */
   font-family: var(--font-secondary);
   -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 video {
