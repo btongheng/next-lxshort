@@ -28,7 +28,7 @@ export default function Navbar() {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <div className="[@media(max-width:375px)]:w-48 [@media(width:320px)]:w-38 sm:w-52 md:w-72 ">
+          <div className="[@media(max-width:375px)]:w-48 [@media(width<=320px)]:w-38 sm:w-52 md:w-72 ">
             {/* <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
               <input

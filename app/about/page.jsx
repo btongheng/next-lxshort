@@ -8,7 +8,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-4 text-center">
-            Build Version: 1.09</p>
+            Build Version: 1.09.1</p>
         </div>
       </main>
     </div>
