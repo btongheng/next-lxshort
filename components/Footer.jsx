@@ -26,9 +26,9 @@ export default function Footer() {
                             />
                         </Link>
                         <nav className="flex flex-row gap-4 text-sm text-gray-300">
-                            <Link href="/movies">Movies</Link>
-                            <Link href="/tv-shows">TV-Shows</Link>
-                            <Link href="/favorites">Favorites</Link>
+                            <Link href="/">Movies</Link>
+                            <Link href="/">TV-Shows</Link>
+                            <Link href="/">Favorites</Link>
                         </nav>
                     </div>
 
