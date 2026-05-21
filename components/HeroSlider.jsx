@@ -76,11 +76,11 @@ export default function HeroSlider({ series = [] }) {
       </div>
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_15%,transparent_0,rgba(0,0,0,0.28)_34%,rgba(0,0,0,0.92)_78%)]" />
-      <div className="absolute inset-0 bg-linear-to-r from-(--primary)/20 via-black/75 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-r from-(black) via-black/75 to-black/10" />
+      <div className="absolute inset-0 bg-linear-to-r from-black via-black/75 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-(--primary)/10  to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-(--background) to-transparent" />
 
-      <div className="relative min-h-70 md:min-h-120 mx-auto flex max-w-7xl items-center px-4 pb-20 pt-20 md:px-6 md:pb-28">
+      <div className="relative min-h-70 md:min-h-120 mx-auto flex max-w-7xl items-center px-4 pt-20 md:px-6 md:pb-28">
         <div
           key={activeSlide.id}
           className="max-w-2xl animate-[hero-copy-in_450ms_ease-out] sm:px-4 md:px-12"
@@ -97,25 +97,22 @@ export default function HeroSlider({ series = [] }) {
             {/* <span>{2026 - (activeIndex % 3)}</span> */}
           </div>
 
-          <p className="mt-4 line-clamp-3 max-w-md sm:visible text-sm leading-6 text-zinc-300">
-            មើលរឿង <span className="font-bold">{activeSlide.name}</span> នៅលើ Telegram <span className="font-bold text-(--primary)">LXShort</span> និង មើលថ្មីៗ។ យើងផ្តល់ជូននូវរឿងភាគថ្មីៗ យ៉ាងឆាប់រហ័ស និង រឿងដែលមានគុណភាពខ្ពស់។
-            
-          </p>
+          {/* s */}
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-6 sm:flex flex-wrap hidden items-center gap-2">
             <Link
               href={`/series/${activeSlide.id}`}
               className="inline-flex items-center gap-2 rounded-full bg-(--primary) px-5 py-3 text-sm font-bold text-white transition hover:bg-(--primary-600)"
             >
               <PlayCircle className="h-5 w-5" />
-              Watch Now
+              មើលឥឡូវនេះ
             </Link>
             <button
               type="button"
               className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-zinc-300 transition hover:text-white"
             >
               <Bookmark className="h-5 w-5" />
-              Favorite
+              ចាប់អារម្មណ៍
             </button>
           </div>
         </div>

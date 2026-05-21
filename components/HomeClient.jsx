@@ -15,8 +15,8 @@ function getImage(series) {
 
 function SectionHeader({ title, href = "/browse" }) {
   return (
-    <div className="mb-4 flex items-center justify-between gap-4">
-      <h2 className="flex items-center gap-2 text-lg font-extrabold uppercase tracking-normal text-white md:text-xl">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="flex items-center gap-2 text-lg font-extrabold uppercase tracking-normal text-white ">
         <span className="flex h-5 w-5 items-center justify-center rounded bg-(--primary) text-black">
           <ChevronRight className="h-4 w-4 stroke-3" />
         </span>
@@ -27,7 +27,7 @@ function SectionHeader({ title, href = "/browse" }) {
         href={href}
         className="inline-flex items-center gap-1 rounded-full border border-zinc-700 px-3 py-1 text-[11px] font-semibold text-zinc-300 transition hover:border-(--primary) hover:text-white"
       >
-        View more
+        ស្វែងរកបន្ថែម
         <ChevronRight className="h-3 w-3" />
       </Link>
     </div>
@@ -60,8 +60,8 @@ function PosterCard({ series, index }) {
       </div>
 
       <div className="mt-2 space-y-1">
-        <div className="flex items-center gap-2 text-[10px] text-zinc-500">
-          <span>{2026 - (index % 4)}</span>
+        <div className="flex items-center justify-between text-[10px] text-zinc-500">
+          <span>{2026}</span>
           <MetaPill>{series.category || "Series"}</MetaPill>
           <span>EP {String((index % 12) + 1).padStart(2, "0")}</span>
         </div>
@@ -115,22 +115,21 @@ export default function HomeClient({ initialSeries }) {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:px-6 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div className="min-w-0 space-y-12">
-          <p className="text-center text-xs text-zinc-600">
-            If you enjoy the website, please consider sharing it with your
-            friends. Thank you!
+          <p className=" text-center mt-4 line-clamp-2 text-sm leading-6 text-zinc-300">
+            មើលរឿងនៅលើ Telegram <span className="font-bold text-(--primary)">LXShort</span> និង មើលថ្មីៗ។ <br /> យើងផ្តល់ជូននូវរឿងភាគថ្មីៗយ៉ាងឆាប់រហ័ស និង រឿងដែលមានគុណភាពខ្ពស់។
           </p>
 
-          <section>
+          {/* <section>
             <SectionHeader title="Latest Movies" />
             <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
               {latestMovies.map((series, index) => (
                 <PosterCard key={`movie-${series.id}-${index}`} series={series} index={index} />
               ))}
             </div>
-          </section>
+          </section> */}
 
           <section>
-            <SectionHeader title="Latest TV Series" />
+            <SectionHeader title="រឿងថ្មីៗ" />
             <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
               {latestTvSeries.map((series, index) => (
                 <PosterCard key={`tv-${series.id}-${index}`} series={series} index={index} />
@@ -140,7 +139,7 @@ export default function HomeClient({ initialSeries }) {
         </div>
 
         <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-          <SectionHeader title="Recently Updated" href="/browse" />
+          <SectionHeader title="រឿងថ្មីៗ ទើបបន្ថែម" href="/browse" />
           <div className="space-y-2">
             {recentlyUpdated.map((series, index) => (
               <RecentItem key={`recent-${series.id}-${index}`} series={series} index={index} />
