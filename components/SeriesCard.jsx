@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+function MetaPill({ children }) {
+  return (
+    <span className="rounded-full border border-zinc-700 bg-black/30 px-2 py-0.5 text-[10px] font-semibold text-zinc-300">
+      {children}
+    </span>
+  );
+}
+
 export default function SeriesCard({ movieSeries, onSelect }) {
   const thumbnail =
     movieSeries?.thumbnail?.trim()
@@ -14,37 +22,32 @@ export default function SeriesCard({ movieSeries, onSelect }) {
     }
   };
 
+  
+
   return (
-    <Link
-      href={`/series/${movieSeries?.id}`}
-      onClick={handleClick}
-      className="cursor-pointer group relative w-full max-w-52.5 mb-2 overflow-hidden transition duration-300 hover:scale-101"
-    >
-      {/* Image Container */}
-      <div className="relative aspect-9/13 w-full overflow-hidden object-fill rounded-lg bg-zinc-900">
+    <Link href={`/series/${movieSeries?.id}`} className="group block min-w-0">
+      <div className="relative aspect-2/3 overflow-hidden rounded-lg bg-zinc-900">
         <Image
-          loading="lazy"
           src={thumbnail}
-          alt={movieSeries?.name || "Series Thumbnail"}
+          alt={movieSeries.name || "Series poster"}
           fill
           unoptimized
-          className="object-cover transition duration-300"
+          className="object-cover transition duration-300 group-hover:scale-105"
         />
-
-        {/* HD Badge */}
-        <div className="absolute left-2 top-2 rounded bg-(--primary) px-1 py-0.3 text-[10px] font-bold text-white">
+        <span className="absolute left-2 top-2 rounded bg-(--primary) px-1.5 py-0.5 text-[9px] font-bold text-white">
           HD
-        </div>
-
-        {/* Overlay on Hover */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+        </span>
+        <div className="absolute inset-0 bg-linear-to-t from-black/75 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
       </div>
 
-      {/* Info Section */}
       <div className="mt-2 space-y-1">
-        <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
-          {movieSeries?.name || "Unknown Series"}
-        </h2>
+        <div className="flex items-center justify-between text-[10px] text-zinc-500">
+          <span>{2026}</span>
+          <MetaPill>{movieSeries.category || "Series"}</MetaPill>
+        </div>
+        <h3 className="line-clamp-2 text-xs font-semibold leading-snug text-zinc-100 transition group-hover:text-(--primary) sm:text-sm">
+          {movieSeries.name}
+        </h3>
       </div>
     </Link>
   );
