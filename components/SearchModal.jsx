@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import { useSearch } from "./SearchProvider";
 import movieSeries from "@/data/movieSeries";
 import Image from "next/image";
+import PosterCard from "./PosterCard";
 
 export default function SearchModal({ isOpen, onClose, onSelectSeries }) {
   const { modalSearch } = useSearch();
@@ -65,68 +66,19 @@ export default function SearchModal({ isOpen, onClose, onSelectSeries }) {
               <>
                 <div className="grid grid-cols-3 gap-4 p-4 sm:grid-cols-4">
                   {filteredSeries.map((series) => {
-                    const thumbnail =
-                      series?.thumbnail?.trim()
-                        ? series.thumbnail
-                        : "https://via.placeholder.com/800x450?text=No+Image";
-
                     return (
                       <button
                         key={series.id}
                         onClick={() => {
                           onSelectSeries(series);
                           onClose();
-                        }}
-                        className="group overflow-hidden rounded text-left"
-                      >
-                        {/* <div className="relative aspect-2/3 w-full overflow-hidden">
-                          <Image
-                            loading="eager"
-                            src={thumbnail}
-                            alt={series?.name || "Series"}
-                            fill
-                            unoptimized
-                            className="object-cover group-hover:scale-101 transition duration-300"
-                          />
-                        </div>
-                        <div className="p-2 bg-linear-to-t from-black/80 to-transparent">
-                          <h3 className="line-clamp-2 text-sm font-semibold text-white">
-                            {series?.name || "Unknown Series"}
-                          </h3>
-                        </div> */}
-                        <div className="relative aspect-9/13 w-full overflow-hidden object-fill rounded-lg bg-zinc-900">
-                          <Image
-                            loading="lazy"
-                            src={thumbnail}
-                            alt={series?.name || "Series"}
-                            fill
-                            unoptimized
-                            className="object-cover transition duration-300"
-                          />
+                        }}>
 
-                          {/* HD Badge */}
-                          <div className="absolute left-2 top-2 rounded bg-(--primary) px-1 py-0.3 text-[10px] font-bold text-white">
-                            HD
-                          </div>
+                        <PosterCard
+                          key={series.id}
+                          series={series}
+                        />
 
-                          {/* Overlay on Hover */}
-                          <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                        </div>
-
-                        {/* Info Section */}
-                        <div className="mt-1 space-y-1">
-                          {/* <div className="flex items-center gap-2 text-xs text-zinc-400">
-                                  <span>{year}</span>
-                                  <span>•</span>
-                                  <span>{type}</span>
-                                  <span>•</span>
-                                  <span>{duration}</span>
-                                </div> */}
-
-                          <h2 className="text-left line-clamp-1 font-semibold text-white sm:text-sm text-xs transition duration-300 group-hover:text-(--primary)">
-                            {series?.name || "Unknown Series"}
-                          </h2>
-                        </div>
                       </button>
                     );
                   })}

@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import MovieSeries from "@/data/movieSeries";
-import SeriesCard from "@/components/SeriesCard";
 import ScrollToTop from "@/components/ScrollToTop";
 import PosterCard from "@/components/PosterCard";
 
@@ -62,10 +61,6 @@ export default function BrowsePage() {
 
         <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
           {visibleSeries.map((series) => (
-            // <SeriesCard
-            //   key={series.id}
-            //   movieSeries={series}
-            // />
             <PosterCard
               key={series.id}
               series={series}

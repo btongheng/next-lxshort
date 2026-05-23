@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-
 import HeroSlider from "./HeroSlider";
 import ScrollToTop from "./ScrollToTop";
 import PosterCard from "./PosterCard";
+import { ChevronRight } from "lucide-react";
 
 const FALLBACK_IMAGE = "https://via.placeholder.com/800x1200?text=No+Image";
 
@@ -35,13 +34,6 @@ function SectionHeader({ title, href = "/browse" }) {
   );
 }
 
-function MetaPill({ children }) {
-  return (
-    <span className="rounded-full border border-zinc-700 bg-black/30 px-2 py-0.5 text-[10px] font-semibold text-zinc-300">
-      {children}
-    </span>
-  );
-}
 
 function RecentItem({ series, index }) {
   return (
