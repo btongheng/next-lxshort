@@ -73,9 +73,8 @@ function RecentItem({ series, index }) {
 
 export default function HomeClient({ initialSeries }) {
   const heroSeries = initialSeries.slice(0, 3);
-  const latestMovies = initialSeries.slice(0, 8);
-  const latestTvSeries = initialSeries;
-  const recentlyUpdated = [...initialSeries].slice(0, 10);
+  const latestTvSeries = initialSeries.slice(0, 8);
+  const recentlyUpdated = [...initialSeries].slice(0, 6);
 
   return (
     <main className="min-h-screen bg-(--background) text-white">
@@ -88,15 +87,6 @@ export default function HomeClient({ initialSeries }) {
           <p className=" text-center mt-4 line-clamp-2 text-sm leading-6 text-zinc-300">
             មើលរឿងនៅលើ Telegram <span className="font-bold text-(--primary)">LXShort</span> និង មើលថ្មីៗ។ <br /> យើងផ្តល់ជូននូវរឿងភាគថ្មីៗយ៉ាងឆាប់រហ័ស និង រឿងដែលមានគុណភាពខ្ពស់។
           </p>
-
-          {/* <section>
-            <SectionHeader title="Latest Movies" />
-            <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
-              {latestMovies.map((series, index) => (
-                <PosterCard key={`movie-${series.id}-${index}`} series={series} index={index} />
-              ))}
-            </div>
-          </section> */}
 
           <section>
             <SectionHeader title="រឿងថ្មីៗ" />
