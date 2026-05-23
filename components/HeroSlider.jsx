@@ -123,7 +123,7 @@ export default function HeroSlider({ series = [] }) {
           <button
             type="button"
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur transition hover:border-(--primary) hover:bg-black/70 md:flex"
+            className="absolute left-4 top-1/2 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur transition hover:border-(--primary) hover:bg-black/70 md:flex"
             aria-label="Previous featured series"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -131,7 +131,7 @@ export default function HeroSlider({ series = [] }) {
           <button
             type="button"
             onClick={goToNext}
-            className="absolute right-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur transition hover:border-(--primary) hover:bg-black/70 md:flex"
+            className="absolute right-4 top-1/2 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur transition hover:border-(--primary) hover:bg-black/70 md:flex"
             aria-label="Next featured series"
           >
             <ChevronRight className="h-5 w-5" />
