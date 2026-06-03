@@ -38,11 +38,6 @@ export default function Footer() {
                     <p className="text-sm text-gray-600 leading-relaxed">
                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rem, ipsam natus, ullam facere labore quos quod molestiae ea quaerat nesciunt? Quisquam voluptatibus sapiente quia delectus repellendus placeat? Eaque, officia.
                     </p>
-                    {/* 
-					<p className="mt-4 text-sm text-primary">
-						This site does not store any files on our server, we only linked to the media which is hosted on 3rd
-						party services.
-					</p> */}
 
                     <p className="my-6 text-xs text-gray-400">LXShort © {new Date().getFullYear()}. All Rights Reserved</p>
                 </div>
@@ -51,15 +46,4 @@ export default function Footer() {
     );
 }
 
-function FooterLink({ href, children }) {
-    return (
-        <Link href={href} className="flex items-center gap-3 text-gray-200 hover:text-white">
-            <span className="inline-flex items-center justify-center w-6 h-6 bg-(--primary) rounded text-white text-xs">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-3 h-3">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 18l6-6-6-6" />
-                </svg>
-            </span>
-            <span className="text-sm">{children}</span>
-        </Link>
-    );
-}
+
